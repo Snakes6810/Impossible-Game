@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<!-- stop user from zooming on mobile.-->
+	<meta name='viewport' content='width=device-width'>
+	<!-- Tell IE to use the most current layout engine-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="UTF-8">
+	<meta name="description" content="A rendition of the worlds hardest game / the impossible game, with brand new levels">
+	<meta name="keywords" content="html css javascript jquery website design development worlds hardest impossible game"> <!-- for SEO. avoid stuffing (web site website websites) -->
+	<meta name="author" content="Harry Tasker">
+	<!-- Following is facebook sharing criteria. Description helps click through rate and conversions -->
+	<meta property="og:image" content="img/thumbnail.png" /> <!-- image displayed in FB links -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://taskersolutions.github.io/JavaScript-Games/" />
+	<meta property="og:description" content="A classic 2d puzzle game, that provides endless challenges and frustration." />
+
+	<title>Impossible Game</title>
+
+	<link rel="dns-prefetch" href="//fonts.googleapis.com"> <!-- load google fonts -->
+	<link href='https://fonts.googleapis.com/css?family=Gloria Hallelujah' rel='stylesheet'>
+	<link rel="shortcut icon" type="image/jpg" href="img/logo.jpg"> <!-- favicon -->
+
+	<!-- for dialog box styles -->
+	<link href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel='stylesheet' />
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/effects.css">
+	<link rel="stylesheet" href="css/mediaqueries.css">	
+	<link rel="stylesheet" href="css/dialog.css">
+	<link rel="stylesheet" href="css/joystick.css">
+</head>
+
+<body onload="createGame()">
+	
+	<div id="joystick-container" class="joystick-container">
+		<img src="img/arrowkeys.png" class="arrowkeys">
+		<div id="joyDiv" class="joystick"></div>
+	</div>
+	<main id="main" class="ready reveal-in">
+		
+		<div id="dialog"><p id="dialog-message"></p></div>
+
+		<div class="container">
+			<div class="float-left">
+				<div class="score-div" id="level">0</div>
+				<div class="score-div" id="time">0</div>
+				<div class="score-div" id="best-time">0</div>
+			</div>
+			
+			<div class="float-middle">
+				<button id="hide-joystick-btn">Hide Joystick</button>
+				<br>
+				<button id="load-btn">Level Select</button>
+				<br>
+				<button id="restart-btn">Restart</button>
+			</div>
+			
+			<div class="float-right">
+				<label>Music:</label>
+				<br>
+				<input id="vol-control" type="range" min="0" max="100" step="1" value ="20" 
+				oninput="changeMusicVolume(this.value)" onchange="changeMusicVolume(this.value)"></input>
+				<br><br>
+				<label>Sound effects:</label>
+				<br>
+				<input id="vol-control" type="range" min="0" max="100" step="1" value ="20" 
+				oninput="changeSfxVolume(this.value)" onchange="changeSfxVolume(this.value)"></input>
+			</div>
+
+		</div>
+	</main>
+	
+	<footer>
+		Created by Franky
+		<br><a href="" target="blank"></a>
+	</footer>
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="script/game.js"></script>
+	
+	<script src="script/joy.js"></script>
+
+	<script src="script/score.js"></script>
+	<script src="script/images.js"></script>
+	<script src="script/timer.js"></script>
+	
+	<script src="script/sound.js"></script>
+	<script src="script/script.js"></script>
+	<script src="script/rectangle.js"></script>
+	<script src="script/circle.js"></script>
+	<script src="script/character.js"></script>	
+	<script src="script/walls.js"></script>
+	<script src="script/collision.js"></script>	
+	
+	<script src="script/enemies/bomb.js"></script>	
+	<script src="script/enemies/bounce.js"></script>
+	<script src="script/enemies/mine.js"></script>
+	<script src="script/enemies/barrier.js"></script>
+	<script src="script/enemies/flames.js"></script>
+
+	<script src="script/level/level.js"></script>
+	<script src="script/level/levelselect.js"></script>
+	<script src="script/level/1.js"></script>
+	<script src="script/level/2.js"></script>
+	<script src="script/level/3.js"></script>
+	<script src="script/level/4.js"></script>
+	<script src="script/level/5.js"></script>
+	<script src="script/level/6.js"></script>
+	<script src="script/level/7.js"></script>
+	<script src="script/level/8.js"></script>
+	<script src="script/level/9.js"></script>
+	<script src="script/level/10.js"></script>
+	<script src="script/level/11.js"></script>
+	<script src="script/level/12.js"></script>
+	<script src="script/level/13.js"></script>
+	<script src="script/level/14.js"></script>
+	<script src="script/level/15.js"></script>
+
+	<!-- scripts for dialog box-->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+ 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>	
+
+	<script>
+		var joy = new JoyStick('joyDiv');
+	</script>
+</body>
+
+</html>
